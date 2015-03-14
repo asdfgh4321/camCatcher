@@ -8,4 +8,7 @@ run: cam
 	./$(run)
 compRun: main.cpp
 	$(com)
-	./$(run)	
+	./$(run)
+
+CFLAGS+=`pkg-config --cflags opencv`
+LDFLAGS+=`pkg-config --libs opencv`
