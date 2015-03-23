@@ -12,12 +12,7 @@ int main(int argc, char* argv[]){
 		return -1;
 	}
 
-	//cap.set(CV_CAP_PROP_POS_MSEC, 300); //start the video at 300ms
-	double fps = cap.get(CV_CAP_PROP_FPS); //get the frames per seconds of the video
-
-	cout << "Frame per seconds : " << fps << endl;
-
-	namedWindow("MyVideo",CV_WINDOW_AUTOSIZE); //create a window called "MyVideo"
+	namedWindow("Cam catch",CV_WINDOW_AUTOSIZE); //create a window called "MyVideo"
 
     	while(1)
     	{
@@ -32,9 +27,9 @@ int main(int argc, char* argv[]){
 
 		imshow("MyVideo", frame); //show the frame in "MyVideo" window
 
-        	//wait for 'esc' key press for 30 ms. If 'esc' key is pressed, break loop
-		if(waitKey(30) == 27){
-                	cout << "esc key is pressed by user" << endl;
+		//wait for 'anykey' to be pressed. If 'anykey is pressed, break loop
+		if(waitKey(30) > 0){
+			cout << "anykey pressed by user" << endl;
 			break; 
 		}
 	}
