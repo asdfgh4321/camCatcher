@@ -1,14 +1,13 @@
 cpps = main.cpp
-hs = 
-run = cam
-com = g++ `pkg-config --cflags opencv` $(cpps) -o $(run) `pkg-config --libs opencv`
+run = /media/disk1/Dropbox/cam
+CFLAGS=`pkg-config --cflags opencv`
+LDFLAGS=`pkg-config --libs opencv`
+SFFLAGS= -lsfml-graphics -lsfml-window -lsfml-system -std=c++0x
+com = g++ $(CFLAGS) $(cpps) -o $(run) $(SFFLAGS) $(LDFLAGS)
+
+
 comp: $(cpps) $(hs)
 	$(com)
-run: cam
-	./$(run)
-compRun: main.cpp
+compArun: $(run)
 	$(com)
 	./$(run)
-
-CFLAGS+=`pkg-config --cflags opencv`
-LDFLAGS+=`pkg-config --libs opencv`
