@@ -15,7 +15,7 @@ int main(int argc, char* argv[]){
 
 		// Create a frame.
 		cv::Mat frame;
-		
+
 		// check if the frame is empty or not!
 		if(!cap.read(frame)){
 			std::cerr << "The frame is Empty! Mother fucker." << std::endl;
@@ -26,7 +26,7 @@ int main(int argc, char* argv[]){
 			std::cerr << "Couldn't fatch frame." << std::endl;
 			break;
 		}
-		
+
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
 			break;
 		}
